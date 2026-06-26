@@ -44,6 +44,7 @@
             <div class="flex items-center"><img style="opacity:0.55" src="assets/images/gabriele-logo.png" alt="Gabriele Photography Logo" class="h-14 w-auto object-contain" decoding="async"></div>
             <div class="hidden lg:flex items-center gap-8 text-sm">
                 <a href="#shop" class="hover:text-brand-red transition">Shop</a>
+                <a href="inventory/" class="hover:text-brand-red transition">Inventory</a>
                 <a href="#used" class="hover:text-brand-red transition">Used Gear</a>
                 <a href="#services" class="hover:text-brand-red transition">Services</a>
                 <a href="#studio" class="hover:text-brand-red transition">The Studio</a>
@@ -117,12 +118,12 @@
                 <h2 class="font-display text-4xl md:text-5xl font-bold mb-3">Shop Everything Photo</h2>
                 <p class="text-white/70 max-w-xl">From your first DSLR to a Leica R4, we stock new, used, and vintage. If we don't have it, John will find it.</p>
             </div>
-            <a href="tel:7054459030" class="hidden md:block text-brand-red font-semibold hover:underline">Call for today's inventory →</a>
+            <a href="inventory/" class="hidden md:block text-brand-red font-semibold hover:underline">Browse today's inventory →</a>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
             <!-- New Gear -->
-            <div class="group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px]">
+            <a href="inventory/#new-cameras" aria-label="Browse new cameras inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] focus:outline-none focus:ring-4 focus:ring-brand-red/50">
                 <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div class="relative h-full p-8 flex flex-col justify-end">
@@ -131,10 +132,10 @@
                     <p class="text-white/80 mt-2">Canon • Nikon • Sony • Fujifilm</p>
                     <div class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Shop New <span>→</span></div>
                 </div>
-            </div>
+            </a>
 
             <!-- Used & Vintage - USE YOUR IMAGE -->
-            <div id="used" class="group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] md:row-span-2">
+            <a href="inventory/#used-vintage" id="used" aria-label="Browse used and vintage inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] md:row-span-2 focus:outline-none focus:ring-4 focus:ring-brand-red/50">
                 <img src="assets/images/vintage-cameras.jpg" alt="Vintage camera collection" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                 <div class="absolute top-6 left-6">
@@ -144,22 +145,23 @@
                     <h3 class="font-display text-4xl font-bold">Used & Vintage</h3>
                     <p class="text-white/90 mt-3 text-lg">Nikon F-801, Minolta Maxxum 7xi, Leica R4, Hasselblad, Rolleiflex, Pentax... the case changes weekly.</p>
                     <p class="text-white/70 mt-4 text-sm">We buy, sell, and trade. Bring your old gear for cash or store credit.</p>
-                    <a href="#contact" class="mt-6 bg-white text-black px-6 py-3 rounded-full font-semibold w-fit hover:bg-zinc-200 transition">Get a Quote Today</a>
+                    <span class="mt-6 bg-white text-black px-6 py-3 rounded-full font-semibold w-fit hover:bg-zinc-200 transition">View Used Gear</span>
                 </div>
-            </div>
+            </a>
 
             <!-- Lenses -->
-            <div class="group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px]">
+            <a href="inventory/#lenses" aria-label="Browse lenses and optics inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] focus:outline-none focus:ring-4 focus:ring-brand-red/50">
                 <img src="https://images.unsplash.com/photo-1581591524425-c7e0978865fc?w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div class="relative h-full p-8 flex flex-col justify-end">
                     <h3 class="font-display text-3xl font-bold">Lenses & Optics</h3>
                     <p class="text-white/80 mt-2">Prime, zoom, vintage glass, telescopes & microscopes</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Browse Lenses <span>→</span></div>
                 </div>
-            </div>
+            </a>
 
             <!-- Accessories -->
-            <div class="group relative overflow-hidden rounded-3xl bg-zinc-900 h-[200px] md:col-span-2">
+            <a href="inventory/#accessories" aria-label="Browse accessories inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[200px] md:col-span-2 focus:outline-none focus:ring-4 focus:ring-brand-red/50">
                 <img src="https://images.unsplash.com/photo-1495704907664-81f74a7efd9b?w=1200" class="absolute inset-0 w-full h-full object-cover opacity-50">
                 <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
                 <div class="relative h-full p-8 flex items-center justify-between">
@@ -169,7 +171,7 @@
                     </div>
                     <div class="hidden sm:block text-5xl opacity-20">→</div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -425,7 +427,7 @@
                     <div class="flex gap-4">
                         <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">📞</div>
                         <div>
-                            <div class="font-semibold"><a href="tel:7054459030" class="hover:text-brand-red">705-445-9030</a> • <a href="/cdn-cgi/l/email-protection#5136303321393e253e22393e2111363c30383d7f323e3c" class="hover:text-brand-red"><span class="__cf_email__" data-cfemail="1a7d7b786a72756e756972756a5a7d777b737634797577">[email&#160;protected]</span></a></div>
+                            <div class="font-semibold"><a href="tel:7054459030" class="hover:text-brand-red">705-445-9030</a> • <a href="/cdn-cgi/l/email-protection#c6a1a7a4b6aea9b2a9b5aea9b686a1aba7afaae8a5a9ab" class="hover:text-brand-red"><span class="__cf_email__" data-cfemail="abcccac9dbc3c4dfc4d8c3c4dbebccc6cac2c785c8c4c6">[email&#160;protected]</span></a></div>
                             <div class="text-white/60 text-sm">Call for used inventory updates</div>
                         </div>
                     </div>
@@ -465,6 +467,6 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a040a2f6cdaeab8e',t:'MTc4MDE3NDQ5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a04130a12a44ac8a',t:'MTc4MDE4MDI5NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a04962fdd95c0426',t:'MTc4MDI2NjI0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1101b762c59ac75',t:'MTc4MjM0OTk4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a040a2f6cdaeab8e',t:'MTc4MDE3NDQ5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a04130a12a44ac8a',t:'MTc4MDE4MDI5NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a04962fdd95c0426',t:'MTc4MDI2NjI0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
