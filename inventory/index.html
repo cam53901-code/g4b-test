@@ -3,484 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory | Gabriele Photography – Collingwood Camera Shop</title>
-    <meta name="description" content="Browse Gabriele Photography's camera shop inventory: new cameras, used and vintage gear, lenses, tripods, bags, film, and accessories in Collingwood, Ontario.">
+    <title>Gabriele Photography | The Studio – Collingwood's Camera Shop Since 1989</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-red': '#C1272D',
+                        'brand-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --red: #C1272D;
-            --red-dark: #8f1d22;
-            --black: #0f0f0f;
-            --black-2: #171717;
-            --black-3: #222;
-            --white: #fff;
-            --muted: rgba(255,255,255,.68);
-            --line: rgba(255,255,255,.12);
-            --gold: #f6c343;
-            --green: #31d07d;
-            --radius: 28px;
-            --shadow: 0 24px 80px rgba(0,0,0,.45);
-        }
-
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            background: var(--black);
-            color: var(--white);
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.5;
-        }
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; display: block; }
-        .display { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.035em; }
-        .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
-        .topbar { background: var(--red); font-size: 14px; }
-        .topbar .container { display: flex; justify-content: space-between; gap: 18px; padding: 8px 0; }
-        .nav {
-            position: sticky; top: 0; z-index: 50;
-            background: rgba(0,0,0,.82);
-            border-bottom: 1px solid var(--line);
-            backdrop-filter: blur(14px);
-        }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 12px 0; }
-        .logo { height: 56px; width: auto; object-fit: contain; opacity: .72; }
-        .nav-links { display: flex; gap: 28px; font-size: 14px; color: rgba(255,255,255,.82); }
-        .nav-links a:hover { color: var(--red); }
-        .button {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            border-radius: 999px; padding: 13px 20px; font-weight: 800;
-            transition: transform .18s ease, background .18s ease, border .18s ease;
-        }
-        .button:hover { transform: translateY(-1px); }
-        .button-red { background: var(--red); color: white; }
-        .button-red:hover { background: var(--red-dark); }
-        .button-white { background: white; color: black; }
-        .button-outline { border: 1px solid var(--line); background: rgba(255,255,255,.06); color: white; }
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            padding: 82px 0 60px;
-            border-bottom: 1px solid var(--line);
-            background:
-                radial-gradient(circle at 75% 15%, rgba(193,39,45,.30), transparent 35%),
-                radial-gradient(circle at 20% 10%, rgba(246,195,67,.12), transparent 28%),
-                linear-gradient(180deg, #161616 0%, #0f0f0f 100%);
-        }
-        .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 48px; }
-        .eyebrow { color: var(--red); font-weight: 900; text-transform: uppercase; letter-spacing: .18em; font-size: 13px; }
-        h1 { font-size: clamp(48px, 8vw, 92px); line-height: .9; margin: 16px 0 22px; }
-        .lead { color: rgba(255,255,255,.78); font-size: clamp(18px, 2vw, 22px); max-width: 680px; }
-        .hero-panel {
-            border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
-            background: rgba(255,255,255,.06); box-shadow: var(--shadow);
-        }
-        .hero-panel img { height: 330px; width: 100%; object-fit: cover; border-radius: 22px; opacity: .88; }
-        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-        .notice { margin-top: 18px; color: rgba(255,255,255,.62); font-size: 14px; }
-
-        .utility { padding: 24px 0; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.025); }
-        .utility-grid { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
-        .search {
-            width: 100%; border: 1px solid var(--line); border-radius: 999px; padding: 15px 18px;
-            color: white; background: rgba(255,255,255,.06); font-size: 16px; outline: none;
-        }
-        .search::placeholder { color: rgba(255,255,255,.45); }
-        .pills { display: flex; flex-wrap: wrap; gap: 10px; }
-        .pill { border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; color: rgba(255,255,255,.8); font-size: 14px; }
-        .pill:hover { background: var(--red); border-color: var(--red); color: white; }
-
-        .inventory-section { padding: 74px 0; }
-        .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 26px; }
-        h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1; margin: 8px 0 0; }
-        .section-copy { color: var(--muted); max-width: 650px; margin: 10px 0 0; }
-        .count { color: rgba(255,255,255,.58); font-weight: 700; white-space: nowrap; }
-        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-        .card {
-            overflow: hidden; border: 1px solid var(--line); border-radius: 26px;
-            background: linear-gradient(180deg, #1b1b1b 0%, #111 100%);
-            transition: transform .18s ease, border .18s ease, box-shadow .18s ease;
-        }
-        .card:hover { transform: translateY(-4px); border-color: rgba(193,39,45,.72); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
-        .photo-wrap { position: relative; background: #0c0c0c; aspect-ratio: 4 / 3; overflow: hidden; }
-        .photo-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
-        .card:hover .photo-wrap img { transform: scale(1.035); }
-        .badge-row { position: absolute; left: 14px; top: 14px; right: 14px; display: flex; justify-content: space-between; gap: 8px; }
-        .badge { border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-        .badge-red { background: var(--red); color: white; }
-        .badge-gold { background: var(--gold); color: black; }
-        .badge-dark { background: rgba(0,0,0,.7); color: white; border: 1px solid rgba(255,255,255,.14); }
-        .card-body { padding: 20px; }
-        .brand-line { color: rgba(255,255,255,.52); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 900; }
-        .product-title { margin: 7px 0 8px; font-size: 22px; line-height: 1.12; }
-        .product-meta { color: var(--muted); font-size: 14px; min-height: 42px; }
-        .price-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
-        .price { font-size: 28px; font-weight: 950; letter-spacing: -.04em; }
-        .status { font-size: 12px; font-weight: 900; color: var(--green); }
-        .card .button { padding: 10px 14px; font-size: 13px; }
-
-        .cta { padding: 70px 0 88px; }
-        .cta-box {
-            display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;
-            border-radius: var(--radius); padding: 34px; background: white; color: black;
-        }
-        .cta-box h2 { color: black; }
-        .cta-box p { color: #555; max-width: 680px; }
-        footer { border-top: 1px solid var(--line); padding: 36px 0; color: rgba(255,255,255,.62); }
-        footer .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-
-        @media (max-width: 900px) {
-            .hero-grid, .utility-grid, .cta-box { grid-template-columns: 1fr; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .nav-links { display: none; }
-            .topbar .container { flex-direction: column; gap: 4px; }
-        }
-        @media (max-width: 620px) {
-            .product-grid { grid-template-columns: 1fr; }
-            .section-head, footer .container { flex-direction: column; align-items: start; }
-            .hero-panel img { height: 240px; }
-        }
+        .glass { backdrop-filter: blur(12px); background: rgba(0,0,0,0.4); }
+        .hero-parallax { background-attachment: fixed; }
     </style>
 </head>
-<body>
-    <div class="topbar">
-        <div class="container">
+<body class="bg-[#0f0f0f] text-white font-sans antialiased">
+    <!-- Top Bar -->
+    <div class="bg-brand-red text-white text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
             <span>📍 133 Hurontario St, Downtown Collingwood</span>
-            <span>Questions? <a href="tel:7054459030"><strong>705-445-9030</strong></a></span>
+            <span class="hidden md:block">Open Today: 10am–5pm • <a href="tel:7054459030" class="underline font-medium">705-445-9030</a></span>
         </div>
     </div>
 
-    <nav class="nav">
-        <div class="container nav-inner">
-            <a href="../" aria-label="Back to Gabriele Photography home"><img src="../assets/images/gabriele-logo.png" alt="Gabriele Photography Logo" class="logo"></a>
-            <div class="nav-links">
-                <a href="../">Home</a>
-                <a href="#new-cameras">New Cameras</a>
-                <a href="#used-vintage">Used & Vintage</a>
-                <a href="#lenses">Lenses</a>
-                <a href="#accessories">Accessories</a>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+            <div class="flex items-center"><img style="opacity:0.55" src="Images/gabriele-logo.png" alt="Gabriele Photography Logo" class="h-14 w-auto object-contain" decoding="async"></div>
+            <div class="hidden lg:flex items-center gap-8 text-sm">
+                <a href="#shop" class="hover:text-brand-red transition">Shop</a>
+                <a href="inventory/" class="hover:text-brand-red transition">Inventory</a>
+                <a href="#used" class="hover:text-brand-red transition">Used Gear</a>
+                <a href="#services" class="hover:text-brand-red transition">Services</a>
+                <a href="#studio" class="hover:text-brand-red transition">The Studio</a>
+                <a href="#workshops" class="hover:text-brand-red transition">Workshops</a>
+                <a href="#contact" class="hover:text-brand-red transition">Contact</a>
             </div>
-            <a href="tel:7054459030" class="button button-red">Call To Hold Item</a>
+            <a href="tel:7054459030" class="bg-brand-red hover:bg-red-700 px-5 py-2.5 rounded-full text-sm font-semibold transition transform hover:scale-105">Passport Photos – Walk In</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-grid">
+    <!-- Hero -->
+    <section class="relative min-h-[92vh] flex items-center">
+        <div class="absolute inset-0">
+            <img src="Images/storefront.jpg" alt="Gabriele Photography storefront and The Studio entrance" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_black_100%)]"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 py-20 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6 backdrop-blur">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-xs tracking-wide">OPEN NOW in Downtown Collingwood</span>
+                </div>
+                <h1 class="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
+                    Your Source For<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-300">Digital & Film</span><br>
+                    Photography
+                </h1>
+                <p class="text-xl text-white/80 mb-10 max-w-xl">35+ years of buying, selling, trading, and teaching photography. New & used Nikon, Canon, Leica, Pentax. Film developing, passport photos in 5 minutes, and Collingwood's creative hub – <em>the studio</em>.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#shop" class="group bg-white text-black px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2 hover:bg-zinc-200 transition">
+                        Explore Gear
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="https://maps.google.com/?q=133+Hurontario+St+Collingwood" target="_blank" class="glass border border-white/30 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition text-center">
+                        Visit The Shop
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-6 mt-12">
+                    <div class="flex -space-x-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80" class="w-10 h-10 rounded-full border-2 border-black object-cover">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80" class="w-10 h-10 rounded-full border-2 border-black object-cover">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80" class="w-10 h-10 rounded-full border-2 border-black object-cover">
+                    </div>
+                    <div>
+                        <div class="flex text-amber-400">★★★★★</div>
+                        <p class="text-sm text-white/70">Loved by 2,000+ local photographers • 4.9/5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="border-y border-white/10 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div><div class="text-3xl font-display font-bold">1989</div><div class="text-xs text-white/60 uppercase tracking-wider">Established</div></div>
+            <div><div class="text-3xl font-display font-bold">10,000+</div><div class="text-xs text-white/60 uppercase tracking-wider">Cameras Traded</div></div>
+            <div><div class="text-3xl font-display font-bold">5 min</div><div class="text-xs text-white/60 uppercase tracking-wider">Passport Photos</div></div>
+            <div><div class="text-3xl font-display font-bold">Family</div><div class="text-xs text-white/60 uppercase tracking-wider">Owned & Operated</div></div>
+        </div>
+    </div>
+
+    <!-- Shop Categories -->
+    <section id="shop" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex items-end justify-between mb-12">
             <div>
-                <div class="eyebrow">Inventory Display</div>
-                <h1 class="display">Browse Gear<br>Before You Visit</h1>
-                <p class="lead">A Henry's-inspired product browsing page styled for Gabriele Photography. Use this page to show what is currently on the shelf, then invite customers to call, visit, or ask about trade-ins.</p>
-                <div class="hero-actions">
-                    <a href="#new-cameras" class="button button-white">Start Browsing →</a>
-                    <a href="../#contact" class="button button-outline">Ask About An Item</a>
-                </div>
-                <p class="notice">Placeholder products are included below. Replace each product picture, name, and price directly in the marked code blocks.</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-3">Shop Everything Photo</h2>
+                <p class="text-white/70 max-w-xl">From your first DSLR to a Leica R4, we stock new, used, and vintage. If we don't have it, John will find it.</p>
             </div>
-            <div class="hero-panel">
-                <img src="../assets/images/inventory-tripods.jpg" alt="Camera tripods and photography equipment inventory">
-            </div>
+            <a href="inventory/" class="hidden md:block text-brand-red font-semibold hover:underline">Browse today's inventory →</a>
         </div>
-    </header>
 
-    <section class="utility" aria-label="Inventory navigation tools">
-        <div class="container utility-grid">
-            <input class="search" type="search" placeholder="Search placeholder inventory: camera, lens, tripod, film...">
-            <div class="pills">
-                <a href="#new-cameras" class="pill">New</a>
-                <a href="#used-vintage" class="pill">Used</a>
-                <a href="#lenses" class="pill">Lenses</a>
-                <a href="#accessories" class="pill">Accessories</a>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- New Gear -->
+            <a href="inventory/#new-cameras" aria-label="Browse new cameras inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] focus:outline-none focus:ring-4 focus:ring-brand-red/50">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-70">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="relative h-full p-8 flex flex-col justify-end">
+                    <span class="text-xs uppercase tracking-widest text-white/60">Authorized Dealer</span>
+                    <h3 class="font-display text-3xl font-bold mt-2">New Cameras</h3>
+                    <p class="text-white/80 mt-2">Canon • Nikon • Sony • Fujifilm</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Shop New <span>→</span></div>
+                </div>
+            </a>
+
+            <!-- Used & Vintage - USE YOUR IMAGE -->
+            <a href="inventory/#used-vintage" id="used" aria-label="Browse used and vintage inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] md:row-span-2 focus:outline-none focus:ring-4 focus:ring-brand-red/50">
+                <img src="Images/vintage-cameras.jpg" alt="Vintage camera collection" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" loading="lazy" decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                <div class="absolute top-6 left-6">
+                    <span class="bg-amber-400 text-black text-xs font-bold px-3 py-1 rounded-full">TREASURE HUNT</span>
+                </div>
+                <div class="relative h-full p-8 flex flex-col justify-end">
+                    <h3 class="font-display text-4xl font-bold">Used & Vintage</h3>
+                    <p class="text-white/90 mt-3 text-lg">Nikon F-801, Minolta Maxxum 7xi, Leica R4, Hasselblad, Rolleiflex, Pentax... the case changes weekly.</p>
+                    <p class="text-white/70 mt-4 text-sm">We buy, sell, and trade. Bring your old gear for cash or store credit.</p>
+                    <span class="mt-6 bg-white text-black px-6 py-3 rounded-full font-semibold w-fit hover:bg-zinc-200 transition">View Used Gear</span>
+                </div>
+            </a>
+
+            <!-- Lenses -->
+            <a href="inventory/#lenses" aria-label="Browse lenses and optics inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[420px] focus:outline-none focus:ring-4 focus:ring-brand-red/50">
+                <img src="https://images.unsplash.com/photo-1581591524425-c7e0978865fc?w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="relative h-full p-8 flex flex-col justify-end">
+                    <h3 class="font-display text-3xl font-bold">Lenses & Optics</h3>
+                    <p class="text-white/80 mt-2">Prime, zoom, vintage glass, telescopes & microscopes</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Browse Lenses <span>→</span></div>
+                </div>
+            </a>
+
+            <!-- Accessories -->
+            <a href="inventory/#accessories" aria-label="Browse accessories inventory" class="block group relative overflow-hidden rounded-3xl bg-zinc-900 h-[200px] md:col-span-2 focus:outline-none focus:ring-4 focus:ring-brand-red/50">
+                <img src="https://images.unsplash.com/photo-1495704907664-81f74a7efd9b?w=1200" class="absolute inset-0 w-full h-full object-cover opacity-50">
+                <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
+                <div class="relative h-full p-8 flex items-center justify-between">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold">Bags • Tripods • Film • Darkroom</h3>
+                        <p class="text-white/70">Everything to shoot, carry, and create</p>
+                    </div>
+                    <div class="hidden sm:block text-5xl opacity-20">→</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services - High Converting -->
+    <section id="services" class="py-24 bg-white text-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-red font-semibold tracking-widest text-sm uppercase">Walk In Today</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-4">Services That Keep Collingwood Clicking</h2>
+                <p class="text-zinc-600">No appointments for most services. Real humans, real fast.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Passport -->
+                <div class="bg-zinc-50 rounded-3xl p-8 border border-zinc-200 hover:shadow-xl transition group">
+                    <div class="w-12 h-12 bg-brand-red rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-2">Passport & ID Photos</h3>
+                    <p class="text-zinc-600 mb-4">Canadian, US, Visa, PAL, FAC, citizenship. Government compliant, printed while you wait.</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold">$19.99</span>
+                        <span class="text-sm text-zinc-500">2 prints • 5 minutes</span>
+                    </div>
+                    <p class="mt-3 text-xs font-semibold text-green-700 bg-green-100 inline-block px-3 py-1 rounded-full">NO APPOINTMENT NEEDED</p>
+                </div>
+
+                <!-- Film Developing -->
+                <div class="bg-zinc-50 rounded-3xl p-8 border border-zinc-200 hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-2">Film Developing & Scanning</h3>
+                    <p class="text-zinc-600 mb-4">35mm, 120, black & white, C-41. High-res scans sent to your phone.</p>
+                    <p class="text-sm font-medium">Local lab partner • 3-5 day turnaround</p>
+                </div>
+
+                <!-- Printing -->
+                <div class="bg-zinc-50 rounded-3xl p-8 border border-zinc-200 hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-2">Custom Printing</h3>
+                    <p class="text-zinc-600">Photo prints, canvas wraps, fine art, metal, enlargements up to 44".</p>
+                </div>
+
+                <!-- Restoration -->
+                <div class="bg-zinc-50 rounded-3xl p-8 border border-zinc-200 hover:shadow-xl transition">
+                    <h3 class="font-display text-2xl font-bold mb-2">Photo Restoration</h3>
+                    <p class="text-zinc-600 mb-4">Bring faded family photos back to life. Scan, repair, reprint.</p>
+                </div>
+
+                <!-- Gifts - USE YOUR IMAGE -->
+                <div class="bg-zinc-50 rounded-3xl p-8 border border-zinc-200 hover:shadow-xl transition overflow-hidden relative">
+                    <img src="./images/gifts.jpg" class="absolute right-0 bottom-0 w-32 h-32 object-contain opacity-20">
+                    <h3 class="font-display text-2xl font-bold mb-2 relative">Custom Gifts</h3>
+                    <p class="text-zinc-600 relative">Mugs, shirts, puzzles, phone cases with YOUR photos. Made in-store.</p>
+                </div>
+
+                <!-- Repairs -->
+                <div class="bg-zinc-900 text-white rounded-3xl p-8 border border-zinc-800 hover:shadow-xl transition">
+                    <h3 class="font-display text-2xl font-bold mb-2">Sensor Cleaning & Repairs</h3>
+                    <p class="text-white/70 mb-4">We clean sensors while you shop. Minor repairs and we’ll source hard-to-find batteries.</p>
+                    <p class="text-sm text-amber-400 font-semibold">Ask about our hunt service – we found a battery for a 20-year-old camera last month!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <main>
-        <section id="new-cameras" class="inventory-section">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow">Authorized Dealer</div>
-                        <h2 class="display">New Cameras</h2>
-                        <p class="section-copy">Show new camera bodies and kits here. Keep descriptions short so the page stays easy to scan.</p>
-                    </div>
-                    <div class="count">Placeholder items</div>
+    <!-- The Studio -->
+    <section id="studio" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="Images/inventory-tripods.jpg" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/50"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 mb-6">
+                    <img src="Images/about-owner.jpg" class="w-12 h-12 rounded object-cover" loading="lazy" decoding="async">
+                    <span class="text-sm uppercase tracking-[0.2em] text-white/60">Inside Gabriele</span>
                 </div>
-
-                <div class="product-grid">
-                    <!-- =========================================================
-                    INVENTORY ITEM 01 — NEW CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit the src below, currently ../assets/images/placeholder-camera.svg
-                    CHANGE NAME: edit the text inside <h3 class="product-title">...</h3>
-                    CHANGE PRICE: edit the text inside <div class="price">...</div>
-                    OPTIONAL: edit brand, short description, badges, and status.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder camera product photo">
-                            <div class="badge-row"><span class="badge badge-red">New</span><span class="badge badge-dark">In Store</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Brand / Mount</div>
-                            <h3 class="product-title">Camera Item Name</h3>
-                            <p class="product-meta">Short placeholder description: body only, kit lens, colour, or condition note.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 02 — NEW CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder camera product photo">
-                            <div class="badge-row"><span class="badge badge-red">New</span><span class="badge badge-dark">Kit</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Brand / Mount</div>
-                            <h3 class="product-title">Camera Item Name</h3>
-                            <p class="product-meta">Short placeholder description: megapixels, lens included, or ideal customer.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 03 — NEW CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder camera product photo">
-                            <div class="badge-row"><span class="badge badge-red">New</span><span class="badge badge-dark">Body</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Brand / Mount</div>
-                            <h3 class="product-title">Camera Item Name</h3>
-                            <p class="product-meta">Short placeholder description: mirrorless, DSLR, compact, instant, or film camera.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-                </div>
+                <h2 class="font-display text-5xl font-bold mb-6">the <span class="italic font-light">studio</span></h2>
+                <p class="text-xl text-white/80 mb-6">Our in-house portrait studio. Professional headshots, family portraits, product photography, and a rental space for creators.</p>
+                <ul class="space-y-3 text-white/80">
+                    <li class="flex gap-3"><span class="text-brand-red">✓</span> Professional lighting & backdrops</li>
+                    <li class="flex gap-3"><span class="text-brand-red">✓</span> Headshots starting at $89</li>
+                    <li class="flex gap-3"><span class="text-brand-red">✓</span> Family & newborn sessions</li>
+                    <li class="flex gap-3"><span class="text-brand-red">✓</span> Studio rental for photographers</li>
+                </ul>
+                <a href="tel:7054459030" class="mt-8 inline-block bg-brand-red px-8 py-4 rounded-full font-semibold hover:bg-red-700 transition">Book Your Session</a>
             </div>
-        </section>
-
-        <section id="used-vintage" class="inventory-section">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow">Used • Vintage • Trade-Ins</div>
-                        <h2 class="display">Used & Vintage</h2>
-                        <p class="section-copy">Use this section for weekly-changing used gear, vintage cameras, collectibles, and trade-ins.</p>
-                    </div>
-                    <div class="count">Placeholder items</div>
-                </div>
-
-                <div class="product-grid">
-                    <!-- =========================================================
-                    INVENTORY ITEM 04 — USED / VINTAGE CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/vintage-cameras.jpg" alt="Placeholder used vintage camera product photo">
-                            <div class="badge-row"><span class="badge badge-gold">Used</span><span class="badge badge-dark">Tested</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Vintage / Film</div>
-                            <h3 class="product-title">Used Camera Item Name</h3>
-                            <p class="product-meta">Condition placeholder: clean, tested, includes strap/case/manual, or notes.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 05 — USED / VINTAGE CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder used camera product photo">
-                            <div class="badge-row"><span class="badge badge-gold">Used</span><span class="badge badge-dark">Trade-In</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Digital / Film</div>
-                            <h3 class="product-title">Used Camera Item Name</h3>
-                            <p class="product-meta">Condition placeholder: shutter count, cosmetic grade, battery/charger included.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 06 — USED / VINTAGE CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder vintage product photo">
-                            <div class="badge-row"><span class="badge badge-gold">Vintage</span><span class="badge badge-dark">One Only</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Collectible</div>
-                            <h3 class="product-title">Vintage Item Name</h3>
-                            <p class="product-meta">Condition placeholder: lens clear, meter status, leather case, display piece, etc.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="lenses" class="inventory-section">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow">Glass & Optics</div>
-                        <h2 class="display">Lenses</h2>
-                        <p class="section-copy">List prime lenses, zoom lenses, vintage glass, adapters, telescopes, and microscopes.</p>
-                    </div>
-                    <div class="count">Placeholder items</div>
-                </div>
-
-                <div class="product-grid">
-                    <!-- =========================================================
-                    INVENTORY ITEM 07 — LENS PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-lens.svg" alt="Placeholder lens product photo">
-                            <div class="badge-row"><span class="badge badge-red">Lens</span><span class="badge badge-dark">Prime</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Mount / Focal Length</div>
-                            <h3 class="product-title">Lens Item Name</h3>
-                            <p class="product-meta">Placeholder: aperture, mount, autofocus/manual focus, condition note.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 08 — LENS PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-lens.svg" alt="Placeholder lens product photo">
-                            <div class="badge-row"><span class="badge badge-red">Lens</span><span class="badge badge-dark">Zoom</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Mount / Focal Length</div>
-                            <h3 class="product-title">Lens Item Name</h3>
-                            <p class="product-meta">Placeholder: ideal use, condition, caps/hood included, compatibility.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 09 — LENS PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-lens.svg" alt="Placeholder optic product photo">
-                            <div class="badge-row"><span class="badge badge-red">Optic</span><span class="badge badge-dark">Specialty</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Telescope / Microscope / Adapter</div>
-                            <h3 class="product-title">Optics Item Name</h3>
-                            <p class="product-meta">Placeholder: magnification, compatibility, accessories included.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="accessories" class="inventory-section">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <div class="eyebrow">Everything Else</div>
-                        <h2 class="display">Accessories</h2>
-                        <p class="section-copy">Add tripods, bags, film, memory cards, batteries, darkroom items, and studio gear here.</p>
-                    </div>
-                    <div class="count">Placeholder items</div>
-                </div>
-
-                <div class="product-grid">
-                    <!-- =========================================================
-                    INVENTORY ITEM 10 — ACCESSORY PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/inventory-tripods.jpg" alt="Placeholder tripod accessory product photo">
-                            <div class="badge-row"><span class="badge badge-red">Accessory</span><span class="badge badge-dark">Tripod</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Tripods / Supports</div>
-                            <h3 class="product-title">Accessory Item Name</h3>
-                            <p class="product-meta">Placeholder: height, weight capacity, included head, condition, or colour.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 11 — ACCESSORY PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-accessory.svg" alt="Placeholder accessory product photo">
-                            <div class="badge-row"><span class="badge badge-red">Accessory</span><span class="badge badge-dark">Bag</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Bags / Cases</div>
-                            <h3 class="product-title">Accessory Item Name</h3>
-                            <p class="product-meta">Placeholder: size, camera capacity, colour, condition, or special feature.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-
-                    <!-- =========================================================
-                    INVENTORY ITEM 12 — ACCESSORY PLACEHOLDER
-                    CHANGE PICTURE: edit src. CHANGE NAME: edit h3. CHANGE PRICE: edit .price.
-                    ========================================================== -->
-                    <article class="card">
-                        <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-accessory.svg" alt="Placeholder film or accessory product photo">
-                            <div class="badge-row"><span class="badge badge-red">Accessory</span><span class="badge badge-dark">Film</span></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="brand-line">Film / Darkroom</div>
-                            <h3 class="product-title">Accessory Item Name</h3>
-                            <p class="product-meta">Placeholder: format, ISO, number of exposures, quantity, or expiry date.</p>
-                            <div class="price-row"><div><div class="price">$0.00</div><div class="status">Available now</div></div><a href="tel:7054459030" class="button button-red">Call</a></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <section class="cta">
-        <div class="container">
-            <div class="cta-box">
-                <div>
-                    <div class="eyebrow">Inventory changes fast</div>
-                    <h2 class="display">See something you like?</h2>
-                    <p>Call before visiting and we can confirm availability, answer questions, or hold an item when possible.</p>
-                </div>
-                <a href="tel:7054459030" class="button button-red">705-445-9030</a>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600" class="rounded-2xl h-64 w-full object-cover">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600" class="rounded-2xl h-64 w-full object-cover mt-8">
+                <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600" class="rounded-2xl h-64 w-full object-cover -mt-8">
+                <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=600" class="rounded-2xl h-64 w-full object-cover">
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <span>© Gabriele Photography • Inventory Display</span>
-            <a href="../">← Back to main website</a>
+    <!-- About / Story -->
+    <section class="py-24 bg-white text-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-5 gap-12 items-center">
+                <div class="lg:col-span-3">
+                    <span class="text-brand-red font-semibold tracking-widest text-sm uppercase">Our Story</span>
+                    <h2 class="font-display text-4xl font-bold mt-3 mb-6">From Italy to Hurontario Street</h2>
+                    <div class="space-y-4 text-lg text-zinc-700 leading-relaxed">
+                        <p>Gabriele Photography was established in 1989 by John Gabriele, inspired by his uncle's photography business in Italy. What started as a small film shop has become Collingwood's hub for photographers of all levels.</p>
+                        <p>We're not a big box store. We're the place where John remembers your camera, Matt finds that impossible battery, and where three generations of families have bought their first camera.</p>
+                        <p>Whether you're shooting on a brand new mirrorless or a Rolleiflex from 1955, you'll get honest advice – not a sales pitch.</p>
+                    </div>
+                    <div class="mt-8 flex items-center gap-6">
+                        <div>
+                            <div class="font-display text-2xl font-bold">John Gabriele</div>
+                            <div class="text-sm text-zinc-500">Owner, President</div>
+                        </div>
+                        <div class="h-10 w-px bg-zinc-300"></div>
+                        <div class="text-sm text-zinc-600">Family owned for 35+ years • BBB Accredited</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="relative">
+                        <img src="Images/about-owner.jpg" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async">
+                        <div class="absolute -bottom-6 -left-6 bg-brand-red text-white p-6 rounded-2xl shadow-xl">
+                            <div class="text-3xl font-display font-bold">35+</div>
+                            <div class="text-xs uppercase tracking-wide">Years in Collingwood</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">What Locals Say</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+                    <div class="flex text-amber-400 mb-4">★★★★★</div>
+                    <p class="text-white/90 mb-6">"Thanks for helping choose my camera bag today. I love the adjustable compartments! Great customer service, keep up the good work."</p>
+                    <div class="text-sm text-white/60">— Melissa, Clearview</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+                    <div class="flex text-amber-400 mb-4">★★★★★</div>
+                    <p class="text-white/90 mb-6">"I was in for a passport photo for my niece and the customer service was excellent! They were extremely helpful. Pleasantly surprised with their selection of cameras, telescopes and microscopes."</p>
+                    <div class="text-sm text-white/60">— Tara, Midland</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+                    <div class="flex text-amber-400 mb-4">★★★★★</div>
+                    <p class="text-white/90 mb-6">"They were able to locate a hard-to-find battery for my old camera, even though it took a month. That's dedication. Cool and welcoming shop."</p>
+                    <div class="text-sm text-white/60">— Verified Review</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops -->
+    <section id="workshops" class="py-20 bg-brand-red">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+                <h3 class="font-display text-3xl md:text-4xl font-bold text-white mb-3">Photography Workshops</h3>
+                <p class="text-white/90 text-lg">Learn manual mode, film basics, lighting, and editing. Small groups, hands-on, taught in the studio.</p>
+            </div>
+            <a href="tel:7054459030" class="bg-black text-white px-8 py-4 rounded-full font-semibold whitespace-nowrap hover:bg-zinc-900 transition">Join Waitlist →</a>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-24 bg-white text-black">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-red font-semibold tracking-widest text-sm uppercase">Get In Touch</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-4">Contact Gabriele Photography</h2>
+                <p class="text-zinc-600">Have a question about used gear, studio bookings, printing, passport photos, or workshops? Send us a message and we’ll get back to you.</p>
+            </div>
+  <form id="contact-form" action="https://formspree.io/f/xaqaqkpb" method="POST">
+      
+      <input type="hidden" name="_replyto" value="cawdacreates@gmail.com">
+      <input type="hidden" name="_subject" value="New Website Contact Form Inquiry">
+                <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-zinc-700 mb-2">Name *</label>
+                        <input id="name" name="name" type="text" required class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-black outline-none transition focus:border-brand-red focus:ring-4 focus:ring-red-100" placeholder="Your name">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-zinc-700 mb-2">Email *</label>
+                        <input id="email" name="email" type="email" required class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-black outline-none transition focus:border-brand-red focus:ring-4 focus:ring-red-100" placeholder="you@example.com">
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-semibold text-zinc-700 mb-2">Phone</label>
+                        <input id="phone" name="phone" type="tel" class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-black outline-none transition focus:border-brand-red focus:ring-4 focus:ring-red-100" placeholder="705-445-9030">
+                    </div>
+
+                    <div>
+                        <label for="topic" class="block text-sm font-semibold text-zinc-700 mb-2">What can we help with?</label>
+                        <select id="topic" name="topic" class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-black outline-none transition focus:border-brand-red focus:ring-4 focus:ring-red-100">
+                            <option value="General question">General question</option>
+                            <option value="Used gear / trade-in">Used gear / trade-in</option>
+                            <option value="Passport or ID photos">Passport or ID photos</option>
+                            <option value="Printing or restoration">Printing or restoration</option>
+                            <option value="Studio booking">Studio booking</option>
+                            <option value="Workshops">Workshops</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="subject" class="block text-sm font-semibold text-zinc-700 mb-2">Subject</label>
+                        <input id="subject" name="subject" type="text" class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-black outline-none transition focus:border-brand-red focus:ring-4 focus:ring-red-100" placeholder="How can we help?">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-sm font-semibold text-zinc-700 mb-2">Message *</label>
+                        <textarea id="message" name="message" rows="6" required class="w-full rounded-2xl border border-zinc-300 bg-white px-4 py-3 text-black outline-none transition focus:border-brand-red focus:ring-4 focus:ring-red-100" placeholder="Tell us what you’re looking for..."></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <p class="text-sm text-zinc-500">You can also call us directly at <a href="tel:7054459030" class="text-brand-red font-semibold hover:underline">705-445-9030</a>.</p>
+                    <button type="submit" class="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition transform hover:scale-105">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="font-display text-4xl font-bold mb-6">Come See The Case</h2>
+                <p class="text-white/80 text-lg mb-8">You can't appreciate the smell of vintage leather and the click of a Hasselblad online. We're right on Hurontario in downtown Collingwood – look for the red building and Kodak sign.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">📍</div>
+                        <div>
+                            <div class="font-semibold">133 Hurontario St, Collingwood, ON L9Y 2L9</div>
+                            <div class="text-white/60 text-sm">Free street parking • Downtown core</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">🕒</div>
+                        <div>
+                            <div class="font-semibold">Mon–Sat: 10am–5pm • Sun: 12pm–4pm</div>
+                            <div class="text-white/60 text-sm">Passport photos anytime – no appointment</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">📞</div>
+                        <div>
+                            <div class="font-semibold"><a href="tel:7054459030" class="hover:text-brand-red">705-445-9030</a> • <a href="/cdn-cgi/l/email-protection#3a5d5b584a52554e554952554a7a5d575b535614595557" class="hover:text-brand-red"><span class="__cf_email__" data-cfemail="dcbbbdbeacb4b3a8b3afb4b3ac9cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a></div>
+                            <div class="text-white/60 text-sm">Call for used inventory updates</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 flex gap-4">
+                    <a href="https://www.facebook.com/GabrielePhotography1/" target="_blank" class="bg-white/10 hover:bg-white/20 px-5 py-3 rounded-full text-sm transition">Facebook</a>
+                    <a href="https://maps.google.com/?q=Gabriele+Photography+Collingwood" target="_blank" class="bg-white/10 hover:bg-white/20 px-5 py-3 rounded-full text-sm transition">Google Maps</a>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden h-[500px] bg-zinc-900 border border-white/10">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.5!2d-80.21626!3d44.49941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a7d5e5b5b5b5b%3A0x0!2s133%20Hurontario%20St%2C%20Collingwood%2C%20ON!5e0!3m2!1sen!2sca!4v1" width="100%" height="100%" style="border:0; filter: grayscale(1) invert(0.9) contrast(0.9);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <img src="Images/gabriele-logo.png" alt="Gabriele Photography Logo" class="h-14 w-auto object-contain" decoding="async">
+                <div class="text-xs text-white/50">© 1989–2026 • Collingwood, Ontario</div>
+            </div>
+            <div class="text-sm text-white/60 text-center md:text-right">
+                Your source for digital photography. New & used cameras, film, printing, passports, and the studio.<br>
+                <span class="text-white/40">Built with care for a Collingwood original.</span>
+            </div>
         </div>
     </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click', e=>{
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a040a2f6cdaeab8e',t:'MTc4MDE3NDQ5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a04130a12a44ac8a',t:'MTc4MDE4MDI5NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a04962fdd95c0426',t:'MTc4MDI2NjI0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a120b4420cdd39c3',t:'MTc4MjUyNDAxMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
