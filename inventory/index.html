@@ -7,18 +7,18 @@
     <meta name="description" content="Browse Gabriele Photography's camera shop inventory: new cameras, used and vintage gear, lenses, tripods, bags, film, and accessories in Collingwood, Ontario.">
     <style>
         :root {
-            --red: #C1272D;
-            --red-dark: #8f1d22;
-            --black: #0f0f0f;
-            --black-2: #171717;
-            --black-3: #222;
-            --white: #fff;
-            --muted: rgba(255,255,255,.68);
-            --line: rgba(255,255,255,.12);
+            --red: #D94A42;
+            --red-dark: #B83A35;
+            --black: #fff8ee;
+            --black-2: #fffdf8;
+            --black-3: #f0e4d5;
+            --white: #2b211d;
+            --muted: rgba(43,33,29,.68);
+            --line: rgba(43,33,29,.14);
             --gold: #f6c343;
-            --green: #31d07d;
+            --green: #238653;
             --radius: 28px;
-            --shadow: 0 24px 80px rgba(0,0,0,.45);
+            --shadow: 0 24px 80px rgba(122,76,38,.18);
         }
 
         * { box-sizing: border-box; }
@@ -38,13 +38,13 @@
         .topbar .container { display: flex; justify-content: space-between; gap: 18px; padding: 8px 0; }
         .nav {
             position: sticky; top: 0; z-index: 50;
-            background: rgba(0,0,0,.82);
+            background: rgba(255,248,238,.92);
             border-bottom: 1px solid var(--line);
             backdrop-filter: blur(14px);
         }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 12px 0; }
         .logo { height: 56px; width: auto; object-fit: contain; opacity: .72; }
-        .nav-links { display: flex; gap: 28px; font-size: 14px; color: rgba(255,255,255,.82); }
+        .nav-links { display: flex; gap: 28px; font-size: 14px; color: rgba(43,33,29,.78); }
         .nav-links a:hover { color: var(--red); }
         .button {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -54,8 +54,8 @@
         .button:hover { transform: translateY(-1px); }
         .button-red { background: var(--red); color: white; }
         .button-red:hover { background: var(--red-dark); }
-        .button-white { background: white; color: black; }
-        .button-outline { border: 1px solid var(--line); background: rgba(255,255,255,.06); color: white; }
+        .button-white { background: #2b211d; color: #fff8ee; }
+        .button-outline { border: 1px solid var(--line); background: rgba(255,255,255,.68); color: #2b211d; }
 
         .hero {
             position: relative;
@@ -63,55 +63,55 @@
             padding: 82px 0 60px;
             border-bottom: 1px solid var(--line);
             background:
-                radial-gradient(circle at 75% 15%, rgba(193,39,45,.30), transparent 35%),
-                radial-gradient(circle at 20% 10%, rgba(246,195,67,.12), transparent 28%),
-                linear-gradient(180deg, #161616 0%, #0f0f0f 100%);
+                radial-gradient(circle at 75% 15%, rgba(217,74,66,.18), transparent 35%),
+                radial-gradient(circle at 20% 10%, rgba(246,195,67,.22), transparent 28%),
+                linear-gradient(180deg, #fff2df 0%, #fff8ee 100%);
         }
         .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 48px; }
         .eyebrow { color: var(--red); font-weight: 900; text-transform: uppercase; letter-spacing: .18em; font-size: 13px; }
         h1 { font-size: clamp(48px, 8vw, 92px); line-height: .9; margin: 16px 0 22px; }
-        .lead { color: rgba(255,255,255,.78); font-size: clamp(18px, 2vw, 22px); max-width: 680px; }
+        .lead { color: rgba(43,33,29,.72); font-size: clamp(18px, 2vw, 22px); max-width: 680px; }
         .hero-panel {
             border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
-            background: rgba(255,255,255,.06); box-shadow: var(--shadow);
+            background: rgba(255,255,255,.62); box-shadow: var(--shadow);
         }
         .hero-panel img { height: 330px; width: 100%; object-fit: cover; border-radius: 22px; opacity: .88; }
         .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-        .notice { margin-top: 18px; color: rgba(255,255,255,.62); font-size: 14px; }
+        .notice { margin-top: 18px; color: rgba(43,33,29,.60); font-size: 14px; }
 
-        .utility { padding: 24px 0; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.025); }
+        .utility { padding: 24px 0; border-bottom: 1px solid var(--line); background: rgba(246,195,67,.10); }
         .utility-grid { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
         .search {
             width: 100%; border: 1px solid var(--line); border-radius: 999px; padding: 15px 18px;
-            color: white; background: rgba(255,255,255,.06); font-size: 16px; outline: none;
+            color: #2b211d; background: rgba(255,255,255,.78); font-size: 16px; outline: none;
         }
-        .search::placeholder { color: rgba(255,255,255,.45); }
+        .search::placeholder { color: rgba(43,33,29,.45); }
         .pills { display: flex; flex-wrap: wrap; gap: 10px; }
-        .pill { border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; color: rgba(255,255,255,.8); font-size: 14px; }
+        .pill { border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; color: rgba(43,33,29,.78); font-size: 14px; }
         .pill:hover { background: var(--red); border-color: var(--red); color: white; }
 
         .inventory-section { padding: 74px 0; }
         .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 26px; }
         h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1; margin: 8px 0 0; }
         .section-copy { color: var(--muted); max-width: 650px; margin: 10px 0 0; }
-        .count { color: rgba(255,255,255,.58); font-weight: 700; white-space: nowrap; }
+        .count { color: rgba(43,33,29,.55); font-weight: 700; white-space: nowrap; }
         .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
         .card {
             overflow: hidden; border: 1px solid var(--line); border-radius: 26px;
-            background: linear-gradient(180deg, #1b1b1b 0%, #111 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #fff6ea 100%);
             transition: transform .18s ease, border .18s ease, box-shadow .18s ease;
         }
-        .card:hover { transform: translateY(-4px); border-color: rgba(193,39,45,.72); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
-        .photo-wrap { position: relative; background: #0c0c0c; aspect-ratio: 4 / 3; overflow: hidden; }
+        .card:hover { transform: translateY(-4px); border-color: rgba(193,39,45,.72); box-shadow: 0 20px 60px rgba(122,76,38,.16); }
+        .photo-wrap { position: relative; background: #f1e2d0; aspect-ratio: 4 / 3; overflow: hidden; }
         .photo-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
         .card:hover .photo-wrap img { transform: scale(1.035); }
         .badge-row { position: absolute; left: 14px; top: 14px; right: 14px; display: flex; justify-content: space-between; gap: 8px; }
         .badge { border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
         .badge-red { background: var(--red); color: white; }
         .badge-gold { background: var(--gold); color: black; }
-        .badge-dark { background: rgba(0,0,0,.7); color: white; border: 1px solid rgba(255,255,255,.14); }
+        .badge-dark { background: rgba(255,248,238,.86); color: #2b211d; border: 1px solid rgba(43,33,29,.14); }
         .card-body { padding: 20px; }
-        .brand-line { color: rgba(255,255,255,.52); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 900; }
+        .brand-line { color: rgba(43,33,29,.50); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 900; }
         .product-title { margin: 7px 0 8px; font-size: 22px; line-height: 1.12; }
         .product-meta { color: var(--muted); font-size: 14px; min-height: 42px; }
         .price-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
@@ -122,11 +122,11 @@
         .cta { padding: 70px 0 88px; }
         .cta-box {
             display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;
-            border-radius: var(--radius); padding: 34px; background: white; color: black;
+            border-radius: var(--radius); padding: 34px; background: #2b211d; color: #fff8ee;
         }
-        .cta-box h2 { color: black; }
-        .cta-box p { color: #555; max-width: 680px; }
-        footer { border-top: 1px solid var(--line); padding: 36px 0; color: rgba(255,255,255,.62); }
+        .cta-box h2 { color: #fff8ee; }
+        .cta-box p { color: rgba(255,248,238,.72); max-width: 680px; }
+        footer { border-top: 1px solid var(--line); padding: 36px 0; color: rgba(43,33,29,.60); }
         footer .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
         @media (max-width: 900px) {
@@ -152,7 +152,7 @@
 
     <nav class="nav">
         <div class="container nav-inner">
-            <a href="../" aria-label="Back to Gabriele Photography home"><img src="../assets/images/gabriele-logo.png" alt="Gabriele Photography Logo" class="logo"></a>
+            <a href="../" aria-label="Back to Gabriele Photography home"><img src="Images/gabriele-logo.png" alt="Gabriele Photography Logo" class="logo"></a>
             <div class="nav-links">
                 <a href="../">Home</a>
                 <a href="#new-cameras">New Cameras</a>
@@ -177,7 +177,7 @@
                 <p class="notice">Placeholder products are included below. Replace each product picture, name, and price directly in the marked code blocks.</p>
             </div>
             <div class="hero-panel">
-                <img src="../assets/images/inventory-tripods.jpg" alt="Camera tripods and photography equipment inventory">
+                <img src="Images/inventory-tripods.jpg" alt="Camera tripods and photography equipment inventory">
             </div>
         </div>
     </header>
@@ -209,14 +209,14 @@
                 <div class="product-grid">
                     <!-- =========================================================
                     INVENTORY ITEM 01 — NEW CAMERA PLACEHOLDER
-                    CHANGE PICTURE: edit the src below, currently ../assets/images/placeholder-camera.svg
+                    CHANGE PICTURE: edit the src below, currently Images/placeholder-camera.svg
                     CHANGE NAME: edit the text inside <h3 class="product-title">...</h3>
                     CHANGE PRICE: edit the text inside <div class="price">...</div>
                     OPTIONAL: edit brand, short description, badges, and status.
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder camera product photo">
+                            <img src="Images/placeholder-camera.svg" alt="Placeholder camera product photo">
                             <div class="badge-row"><span class="badge badge-red">New</span><span class="badge badge-dark">In Store</span></div>
                         </div>
                         <div class="card-body">
@@ -233,7 +233,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder camera product photo">
+                            <img src="Images/placeholder-camera.svg" alt="Placeholder camera product photo">
                             <div class="badge-row"><span class="badge badge-red">New</span><span class="badge badge-dark">Kit</span></div>
                         </div>
                         <div class="card-body">
@@ -250,7 +250,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder camera product photo">
+                            <img src="Images/placeholder-camera.svg" alt="Placeholder camera product photo">
                             <div class="badge-row"><span class="badge badge-red">New</span><span class="badge badge-dark">Body</span></div>
                         </div>
                         <div class="card-body">
@@ -282,7 +282,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/vintage-cameras.jpg" alt="Placeholder used vintage camera product photo">
+                            <img src="Images/vintage-cameras.jpg" alt="Placeholder used vintage camera product photo">
                             <div class="badge-row"><span class="badge badge-gold">Used</span><span class="badge badge-dark">Tested</span></div>
                         </div>
                         <div class="card-body">
@@ -299,7 +299,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder used camera product photo">
+                            <img src="Images/placeholder-camera.svg" alt="Placeholder used camera product photo">
                             <div class="badge-row"><span class="badge badge-gold">Used</span><span class="badge badge-dark">Trade-In</span></div>
                         </div>
                         <div class="card-body">
@@ -316,7 +316,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-camera.svg" alt="Placeholder vintage product photo">
+                            <img src="Images/placeholder-camera.svg" alt="Placeholder vintage product photo">
                             <div class="badge-row"><span class="badge badge-gold">Vintage</span><span class="badge badge-dark">One Only</span></div>
                         </div>
                         <div class="card-body">
@@ -348,7 +348,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-lens.svg" alt="Placeholder lens product photo">
+                            <img src="Images/placeholder-lens.svg" alt="Placeholder lens product photo">
                             <div class="badge-row"><span class="badge badge-red">Lens</span><span class="badge badge-dark">Prime</span></div>
                         </div>
                         <div class="card-body">
@@ -365,7 +365,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-lens.svg" alt="Placeholder lens product photo">
+                            <img src="Images/placeholder-lens.svg" alt="Placeholder lens product photo">
                             <div class="badge-row"><span class="badge badge-red">Lens</span><span class="badge badge-dark">Zoom</span></div>
                         </div>
                         <div class="card-body">
@@ -382,7 +382,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-lens.svg" alt="Placeholder optic product photo">
+                            <img src="Images/placeholder-lens.svg" alt="Placeholder optic product photo">
                             <div class="badge-row"><span class="badge badge-red">Optic</span><span class="badge badge-dark">Specialty</span></div>
                         </div>
                         <div class="card-body">
@@ -414,7 +414,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/inventory-tripods.jpg" alt="Placeholder tripod accessory product photo">
+                            <img src="Images/inventory-tripods.jpg" alt="Placeholder tripod accessory product photo">
                             <div class="badge-row"><span class="badge badge-red">Accessory</span><span class="badge badge-dark">Tripod</span></div>
                         </div>
                         <div class="card-body">
@@ -431,7 +431,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-accessory.svg" alt="Placeholder accessory product photo">
+                            <img src="Images/placeholder-accessory.svg" alt="Placeholder accessory product photo">
                             <div class="badge-row"><span class="badge badge-red">Accessory</span><span class="badge badge-dark">Bag</span></div>
                         </div>
                         <div class="card-body">
@@ -448,7 +448,7 @@
                     ========================================================== -->
                     <article class="card">
                         <div class="photo-wrap">
-                            <img src="../assets/images/placeholder-accessory.svg" alt="Placeholder film or accessory product photo">
+                            <img src="Images/placeholder-accessory.svg" alt="Placeholder film or accessory product photo">
                             <div class="badge-row"><span class="badge badge-red">Accessory</span><span class="badge badge-dark">Film</span></div>
                         </div>
                         <div class="card-body">
@@ -482,5 +482,6 @@
             <a href="../">← Back to main website</a>
         </div>
     </footer>
-</body>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a12832155d61df5a',t:'MTc4MjYwMjU2NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
