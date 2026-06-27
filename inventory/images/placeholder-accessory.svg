@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#101010"/>
+  <path d="M250 170h300l55 315H195z" fill="#171717" stroke="#555" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M305 170c0-70 190-70 190 0" fill="none" stroke="#c1272d" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="335" cy="320" r="28" fill="#333"/><circle cx="465" cy="320" r="28" fill="#333"/>
+  <text x="400" y="540" fill="#777" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle">ACCESSORY PHOTO PLACEHOLDER</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0f0f0f"/>
+  <ellipse cx="400" cy="300" rx="180" ry="205" fill="#080808" stroke="#555" stroke-width="12"/>
+  <ellipse cx="400" cy="300" rx="120" ry="142" fill="#151515" stroke="#c1272d" stroke-width="12"/>
+  <ellipse cx="400" cy="300" rx="65" ry="78" fill="#222" stroke="#777" stroke-width="8"/>
+  <circle cx="430" cy="255" r="26" fill="#fff" opacity=".32"/>
+  <text x="400" y="540" fill="#777" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle">LENS PHOTO PLACEHOLDER</text>
+</svg>
